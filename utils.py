@@ -2,11 +2,21 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from PIL import Image
+import PIL
+from matplotlib import cm
 
 
 def load_image(path):
     return np.array(Image.open(path))
 
+def save_image(path, image):
+    #im = Image.fromarray(np.uint8(cm.gist_earth(myarray) * 255))
+    print(type(image),"--------------------")
+    #image.fromarray(b, mode='RGB')
+    #image.save(path)
+
+    plt.imshow(image)
+    plt.waitforbuttonpress()
 
 def plot_sample(lr, sr):
     plt.figure(figsize=(20, 10))
